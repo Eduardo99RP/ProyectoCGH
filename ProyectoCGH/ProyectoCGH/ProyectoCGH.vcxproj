@@ -17,7 +17,6 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -53,25 +52,23 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="Shared" >
+  <ImportGroup Label="Shared">
   </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -85,17 +82,19 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
-
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>include;glm;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>lib;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>irrKlang.lib;assimp-vc140-mt.lib;glew32.lib;glfw3.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -106,12 +105,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>include;glm;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>lib;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>irrKlang.lib;assimp-vc140-mt.lib;glew32.lib;glfw3.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -142,8 +144,46 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Camera.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\CommonValues.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\definition.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\DirectionalLight.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Light.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Material.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Mesh.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Model.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\PointLight.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Shader_light.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Skybox.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Sphere.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\SpotLight.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\stb_image.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Texture.h" />
+    <ClInclude Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Camera.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\CargaModelos.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\DirectionalLight.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Light.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Material.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Mesh_tn.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Model.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\PointLight.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Shader_light.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Skybox.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Sphere.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\SpotLight.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Texture.cpp" />
+    <ClCompile Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\shaders\shader_light.frag" />
+    <None Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\shaders\shader_light.vert" />
+    <None Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\shaders\skybox.frag" />
+    <None Include="..\..\..\..\..\Desktop\ProyectoCGH\ProyectoCGH\ProyectoCGH\shaders\skybox.vert" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
